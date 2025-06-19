@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <title>B Series Foods</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #111, #8B0000, #FFCC00);
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      cursor: none;
+    }
+
+    header {
+      padding: 40px 20px 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      width: 220px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    }
+
+    h1 {
+      font-size: 3.5em;
+      margin: 0;
+      color: #FFD700;
+      text-shadow: 2px 2px #000;
+    }
+
+    p.slogan {
+      font-size: 1.5em;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 15px 35px;
+      background: #FFD700;
+      color: #111;
+      text-decoration: none;
+      font-size: 1.2em;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background 0.3s;
+      z-index: 10;
+      position: relative;
+    }
+
+    .btn:hover {
+      background: #e6c200;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      opacity: 0.6;
+      position: relative;
+      z-index: 10;
+    }
+
+    .snowflake {
+      position: fixed;
+      top: -50px;
+      z-index: 1;
+      pointer-events: none;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://i.imgur.com/wzn4TY4.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.8;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+
+    .custom-cursor {
+      position: fixed;
+      width: 48px;
+      height: 48px;
+      background-image: url('https://i.imgur.com/pxeEUZr.png');
+      background-size: contain;
+      pointer-events: none;
+      z-index: 20000;
+      transform: scaleX(-1);
+      user-select: none;
+    }
+
+    .flame {
+      position: fixed;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://i.imgur.com/H5IpER5.png');
+      background-size: contain;
+      pointer-events: none;
+      z-index: 10000;
+      opacity: 1;
+      animation: fadeOut 0.6s forwards;
+      transform: rotate(90deg);
+      user-select: none;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: scale(2) rotate(90deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://i.imgur.com/cGKUtZ2.png" alt="B Series Foods Logo" class="logo" />
+    <h1>B Series Foods</h1>
+    <p class="slogan">Flavors of the revolution with a taste of satire</p>
+    <a href="cardapio.html" class="btn">View the Comrade's Menu</a>
+  </header>
+
+  <footer>
+    <p>&copy; 2025 B Series Foods — School Project of Gastronomic Guerrilla</p>
+  </footer>
+
+  <script>
+    function createSnowflake() {
+      const flake = document.createElement('div');
+      flake.classList.add('snowflake');
+      flake.style.left = Math.random() * 100 + 'vw';
+      flake.style.animationDuration = (Math.random() * 3 + 4) + 's';
+      flake.style.opacity = (Math.random() * 0.5 + 0.5).toFixed(2);
+      document.body.appendChild(flake);
+
+      setTimeout(() => {
+        flake.remove();
+      }, 8000);
+    }
+    setInterval(createSnowflake, 300);
+
+    const cursor = document.createElement('div');
+    cursor.classList.add('custom-cursor');
+    document.body.appendChild(cursor);
+
+    let flameCooldown = false;
+
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = (e.clientX - 24) + 'px';
+      cursor.style.top = (e.clientY - 24) + 'px';
+
+      if (flameCooldown) return;
+      flameCooldown = true;
+
+      const flame = document.createElement('div');
+      flame.classList.add('flame');
+      flame.style.left = (e.clientX + 10) + 'px';
+      flame.style.top = (e.clientY + 10) + 'px';
+      document.body.appendChild(flame);
+
+      setTimeout(() => flame.remove(), 600);
+      setTimeout(() => flameCooldown = false, 50);
+    });
+  </script>
+</body>
+</html>
