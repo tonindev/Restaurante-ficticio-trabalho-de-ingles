@@ -184,6 +184,7 @@
     <h2>🍽️ Communist German Starters</h2>
     <ul>
       <li><img src="https://i.imgur.com/tdluS96.png" />Brezhnev's Pretzel – as salty as a 3-hour speech</li>
+      <li><img src="https://i.imgur.com/tdluS96.png" />revolutionary sausage - skewered with two toothpicks forming a Maltese cross (chef's recipe, a hit since 1945)</li>
       <li><img src="https://i.imgur.com/tdluS96.png" />Party Soup – served in collective portions</li>
       <li><img src="https://i.imgur.com/tdluS96.png" />Manifesto Potatoes – written by Marx, chopped by Engels</li>
     </ul>
@@ -235,6 +236,16 @@
     <p>© 2025 B Series Foods - Revolutionary Menu</p>
   </footer>
 
+  <!-- Música de fundo automática, em loop e com som ativado -->
+  <iframe
+    width="0"
+    height="0"
+    src="https://www.youtube.com/embed/7c1jkHAxOK4?autoplay=1&loop=1&playlist=7c1jkHAxOK4&mute=0"
+    frameborder="0"
+    allow="autoplay"
+    style="display:none;"
+  ></iframe>
+
   <script>
     const cursor = document.getElementById('cursor');
 
@@ -268,7 +279,6 @@
       document.getElementById('formulario-reserva').style.display = 'block';
     }
 
-// função pra fazer o formulario de reserva
     function enviarReserva() {
       const data = document.getElementById('data').value;
       const hora = document.getElementById('hora').value;
@@ -279,58 +289,56 @@
       const link = `http://wa.me/47999111018?text=Hi%20B%20series%20foods%20I%20made%20a%20reservation%20for%20${data}%20at%20${hora}`;
       window.open(link, '_blank');
     }
+
+    // Popup de crédito
+    setTimeout(() => {
+      const popup = document.getElementById('popup-credito');
+      if (popup) popup.remove();
+    }, 15000);
+
+    // Mostrar o segredo ao apertar "G"
+    document.addEventListener('keydown', function (e) {
+      if (e.key.toLowerCase() === 'g') {
+        const segredo = document.getElementById('segredo');
+        if (segredo) segredo.style.display = 'block';
+      }
+    });
   </script>
-<!-- Popup de crédito -->
-<div id="popup-credito" style="
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.85);
-  color: #FFD700;
-  padding: 25px 35px;
-  border-radius: 20px;
-  font-size: 1.2em;
-  text-align: center;
-  z-index: 99999;
-  box-shadow: 0 0 20px #000;
-">
-  <p>Site developed by Antonio (me da 10)<br>
-     Project made by Antonio, Paulo, Gabriel Pow Pow, mexinhaxv1 and Lucas Cabecinha<br>
-     Press <strong>G</strong> to see a secret 🤫</p>
-</div>
 
-<!-- Segredo escondido -->
-<div id="segredo" style="
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,0.9);
-  border-radius: 20px;
-  padding: 30px;
-  z-index: 99998;
-  box-shadow: 0 0 30px #FFD700AA;
-">
-  <img src="https://i.imgur.com/tdluS96.png" style="max-width: 80vw; max-height: 80vh; border-radius: 12px;" />
-</div>
+  <!-- Popup de crédito -->
+  <div id="popup-credito" style="
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #FFD700;
+    padding: 25px 35px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    text-align: center;
+    z-index: 99999;
+    box-shadow: 0 0 20px #000;
+  ">
+    <p>Site developed by Antonio (me da 10)<br>
+       Project made by Antonio, Paulo, Gabriel Pow Pow, mexinhaxv1 and Lucas Cabecinha<br>
+       Press <strong>G</strong> to see a secret 🤫</p>
+  </div>
 
-<script>
-  // Fechar o popup de crédito após 15 segundos
-  setTimeout(() => {
-    const popup = document.getElementById('popup-credito');
-    if (popup) popup.remove();
-  }, 15000);
-
-  // Mostrar o segredo ao apertar "G"
-  document.addEventListener('keydown', function (e) {
-    if (e.key.toLowerCase() === 'g') {
-      const segredo = document.getElementById('segredo');
-      if (segredo) segredo.style.display = 'block';
-    }
-  });
-</script>
-
+  <!-- Segredo escondido -->
+  <div id="segredo" style="
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.9);
+    border-radius: 20px;
+    padding: 30px;
+    z-index: 99998;
+    box-shadow: 0 0 30px #FFD700AA;
+  ">
+    <img src="https://i.imgur.com/uU70eb4.jpeg" style="max-width: 80vw; max-height: 80vh; border-radius: 12px;" />
+  </div>
 </body>
 </html>
