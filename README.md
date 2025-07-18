@@ -43,3 +43,6 @@ Se você abrir este repositório em locais governamentais, use VPN, modo anônim
 “É isso, seus lindos maravilhosos cheirosos gostosos apetitosos lindosos e toda massa trabalhadora dos ‘osos’. Se não gostou, denuncia no consulado — só não esquece de sair correndo depois.”
 
 Atenção: Sátira servida com o teor tóxico da criatividade sem censura. Bom apetite e boa sorte!
+
+https://youtu.be/zBYCAZSbmtw link para o video completo do anuncio
+
